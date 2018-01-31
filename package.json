@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --quiet"
   },
   "author": "<bhaviksheth20@gmail.com>",
   "license": "MIT",
@@ -22,5 +22,10 @@
     "style-loader": "^0.20.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
+  },
+  "babel": {
+    "presets": [
+      "env", "react"
+    ]
   }
 }
