@@ -10,8 +10,14 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        enforce: "pre",
         exclude: /node_modules/,
-        loader: ["babel-loader", "eslint-loader"],
+        loader: "eslint-loader",
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
       },
       {
         test: /\.scss$/,
