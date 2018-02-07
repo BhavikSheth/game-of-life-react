@@ -4,13 +4,16 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "webpack-dev-server --progress",
+    "start": "webpack-dev-server --progress --quiet",
     "build": "webpack",
     "watch": "webpack --watch"
   },
   "author": "<bhaviksheth20@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -48,13 +51,15 @@
       }
     },
     "env": {
+      "browser": true,
       "es6": true
     },
     "plugins": [
       "react"
     ],
     "rules": {
-      "quotes": 0
+      "quotes": 0,
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     }
   }
 }
