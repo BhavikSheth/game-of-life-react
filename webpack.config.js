@@ -27,7 +27,6 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
-    // publicPath: '/',
     port: 5000,
   },
 };
