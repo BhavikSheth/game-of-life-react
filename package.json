@@ -6,7 +6,8 @@
     "prestart": "babel-node tools/startMessage.js",
     "start": "webpack-dev-server --progress --quiet",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "test": "NODE_ENV=test mocha --require babel-register tests/*.js --reporter spec"
   },
   "author": "<bhaviksheth20@gmail.com>",
   "license": "MIT",
@@ -21,15 +22,22 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
     "colours": "^0.6.0-2",
     "css-loader": "^0.28.9",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
+    "mocha": "^5.0.0",
     "node-sass": "^4.7.2",
+    "react-hot-loader": "^3.1.3",
+    "react-test-renderer": "^16.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.1",
     "webpack": "^3.10.0",
@@ -37,9 +45,24 @@
   },
   "babel": {
     "presets": [
-      "env",
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ],
       "react"
-    ]
+    ],
+    "plugins": [
+      "react-hot-loader/babel"
+    ],
+    "env": {
+      "test":{
+        "presets": [
+          "env"
+        ]
+      }
+    }
   },
   "eslintConfig": {
     "extends": "airbnb",
@@ -52,14 +75,23 @@
     },
     "env": {
       "browser": true,
-      "es6": true
+      "es6": true,
+      "mocha": true
     },
     "plugins": [
       "react"
     ],
     "rules": {
       "quotes": 0,
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ]
     }
   }
 }
