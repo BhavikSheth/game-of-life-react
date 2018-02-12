@@ -1,20 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import rootReducer from '../reducers/rootReducer';
 import App from './App';
 import './App.scss';
 
-const render = (Component) => {
-  ReactDOM.render(
-    <Component />,
+const store = createStore(rootReducer);
+
+const renderApp = (Component) => {
+  render(
+    <Provider store={store}>
+      <Component />
+    </Provider>,
     document.getElementById('root'),
   );
 };
 
-render(App);
-
+renderApp(App);
 
 if (module.hot) {
   module.hot.accept('./App', () => {
-    render(App);
+    renderApp(App);
   });
 }
