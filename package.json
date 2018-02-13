@@ -1,15 +1,29 @@
 {
   "name": "my-react-boilerplate",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Boilerplate for creating apps with React and Redux",
+  "main": "src/App.js",
   "scripts": {
     "start": "webpack-dev-server --progress --quiet",
     "build": "webpack",
     "watch": "webpack --watch",
     "test": "NODE_ENV=test mocha --require babel-register tests/*.js --reporter spec"
   },
-  "author": "<bhaviksheth20@gmail.com>",
-  "license": "MIT",
+  "keywords": [
+    "react",
+    "redux",
+    "hot reload",
+    "webpack",
+    "mocha",
+    "eslint",
+    "boilerplate"
+  ],
+  "license": "MIT",  
+  "author": "Bhavik Sheth <bhavik@bhaviksheth.io> (http://www.bhaviksheth.io/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BhavikSheth/my-react-boilerplate"
+  },
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

@@ -1,5 +1,5 @@
 const rootReducer = () => {
-  console.log('newtest');
+  console.log('testreducer');
 };
 
 export default rootReducer;
