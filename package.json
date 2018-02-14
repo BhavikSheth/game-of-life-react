@@ -4,7 +4,8 @@
   "description": "Boilerplate for creating apps with React and Redux",
   "main": "src/App.js",
   "scripts": {
-    "start": "concurrently \"yarn test:watch\" \"yarn lint:watch\" \"yarn webpack-dev-server --progress --quiet\"",
+    "start": "concurrently \"yarn test:watch\" \"yarn lint:watch\" \"yarn dev\"",
+    "dev": "webpack-dev-server --progress --quiet",
     "build": "webpack",
     "watch": "webpack --watch",
     "test": "NODE_ENV=test mocha --require babel-register tests/*.js --reporter spec",
