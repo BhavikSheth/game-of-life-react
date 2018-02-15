@@ -4,7 +4,7 @@
   "description": "Boilerplate for creating apps with React and Redux",
   "main": "src/App.js",
   "scripts": {
-    "start": "concurrently \"yarn test:watch\" \"yarn lint:watch\" \"yarn dev\"",
+    "start": "concurrently \"yarn test:watch\" \"yarn dev\"",
     "dev": "webpack-dev-server --progress --quiet",
     "build": "webpack",
     "watch": "webpack --watch",
