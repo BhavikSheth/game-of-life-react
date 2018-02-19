@@ -7,7 +7,7 @@ module.exports = {
     "react-hot-loader/patch",
     "webpack-dev-server/client?http://localhost:5000",
     "webpack/hot/only-dev-server",
-    "./src/App.js",
+    "./src/index.js",
   ],
   output: {
     filename: "bundle.js",
@@ -32,7 +32,7 @@ module.exports = {
     port: 5000,
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),   
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "./dist/index.html",

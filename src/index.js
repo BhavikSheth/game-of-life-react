@@ -3,8 +3,8 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-import rootReducer from "../reducers/rootReducer";
-import HelloWorld from "./Hello_World";
+import rootReducer from "./reducers/rootReducer";
+import App from "./components/app";
 import "./App.scss";
 
 const store = createStore(rootReducer);
@@ -18,10 +18,10 @@ const renderApp = (Component) => {
   );
 };
 
-renderApp(HelloWorld);
+renderApp(App);
 
 if (module.hot) {
-  module.hot.accept("./Hello_World", () => {
-    renderApp(HelloWorld);
+  module.hot.accept("./components/app", () => {
+    renderApp(App);
   });
 }

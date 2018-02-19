@@ -4,14 +4,14 @@ import { shallow, configure } from "enzyme";
 
 import Adapter from "enzyme-adapter-react-16";
 
-import HelloWorld from "../src/Hello_World";
+import App from "../src/components/app";
 
 configure({ adapter: new Adapter() });
 
 
-describe("<HelloWorld/>", () => {
+describe("<App/>", () => {
   it("renders one <h1> tag", () => {
-    const wrapper = shallow(<HelloWorld />);
+    const wrapper = shallow(<App />);
     expect(wrapper.find("h1")).to.have.length(1);
   });
 });
