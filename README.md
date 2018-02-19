@@ -8,7 +8,7 @@ As many React development jobs require the knowledge of how to build an environm
 * **Bundler:** Webpack
 * **Linter:** ESLint
 * **Testing:** Mocha, Chai, and Enzyme
-* **Hot Reloading:** React-Hot-Loader with Webpack
+* **Hot Reloading:** React Hot Loader with Webpack
 * **Local Server:** Webpack Dev Server
 * **CSS Preprocessor:** SASS
 * **Compile ES6 to ES5:** Babel
@@ -16,7 +16,7 @@ As many React development jobs require the knowledge of how to build an environm
 
 ## Get Started
 
-1. **Clone the Project**. `git clone https://github.com/BhavikSheth/my-react-boilerplate`.
+1. **Clone the Project**. `git clone https://github.com/BhavikSheth/my-react-boilerplate.git`.
 2. **cd into your new directory**.
 3. **Install all dependencies in package.json**. `yarn`.
 4. **Run the app**. `yarn start`.
@@ -24,8 +24,8 @@ As many React development jobs require the knowledge of how to build an environm
 
 ## Ideas
 
-* Change testing environment to Jest
-* Add React Router
+* jest
+* react router
 * file-loader
 * url-loader
-* set up an express server
+* express server
