@@ -1,13 +1,13 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:5000',
-    'webpack/hot/only-dev-server',
-    './src/App.js',
+    "react-hot-loader/patch",
+    "webpack-dev-server/client?http://localhost:5000",
+    "webpack/hot/only-dev-server",
+    "./src/App.js",
   ],
   output: {
     filename: "bundle.js",
@@ -15,12 +15,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        enforce: "pre",
-        exclude: /node_modules/,
-        loader: "eslint-loader",
-      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -34,16 +28,16 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, "dist"),
     port: 5000,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      template: './dist/index.html',
-      filename: 'index.html',
-      inject: 'body',
+      template: "./dist/index.html",
+      filename: "index.html",
+      inject: "body",
     }),
   ],
 };
