@@ -21,7 +21,7 @@ const renderApp = (Component) => {
 renderApp(HelloWorld);
 
 if (module.hot) {
-  module.hot.accept("./App", () => {
+  module.hot.accept("./Hello_World", () => {
     renderApp(HelloWorld);
   });
 }
