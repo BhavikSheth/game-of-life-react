@@ -1,4 +1,4 @@
-# My React Boilerplate
+# React Boilerplate
 A boilerplate for creating React and Redux applications.
 
 As many React development jobs require the knowledge of how to build an environment , I built a boilerplate from scratch for React development to learn how to configure webpack, set up testing environments, implement Babel, and more.
