@@ -16,10 +16,10 @@ As many React development jobs require the knowledge of how to build an environm
 
 ## Get Started
 
-1. **Clone the Project**. `git clone https://github.com/BhavikSheth/my-react-boilerplate.git`.
+1. **Clone the Project**. `git clone https://github.com/BhavikSheth/react-boilerplate.git`.
 2. **cd into your new directory**.
 3. **Install all dependencies in package.json**. `yarn`.
-4. **Run the app**. `yarn start`.
+4. **Run the app**. `yarn start` then open [http://localhost:5000/](http://localhost:5000/).
 
 
 ## Ideas
