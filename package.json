@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --progress --quiet",
     "build": "webpack",
     "watch": "webpack --watch",
-    "test": "NODE_ENV=test mocha --require babel-register tests/*.js --reporter spec",
+    "test": "NODE_ENV=test mocha --require babel-register src/**/*.spec.js",
     "test:watch": "yarn test --watch",
     "lint": "esw webpack.config.js src tools tests",
     "lint:watch": "yarn lint --watch"
