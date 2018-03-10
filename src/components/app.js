@@ -14,6 +14,15 @@ class App extends Component {
       board: Array(this.rows).fill().map(() => Array(this.cols).fill(false)),
     };
   }
+
+  selectBox = (row, col) => {
+    let boardCopy = arrayClone(this.state.board);
+    boardCopy[row][col] = !boardCopy[row][col];
+    this.setState({
+      board: boardCopy,
+    });
+  }
+
   render() {
     return (
       <div className="app">
@@ -22,11 +31,16 @@ class App extends Component {
           board={this.state.board}
           rows={this.rows}
           cols={this.cols}
+          selectBox={this.selectBox}
         />
         <h2>Generations: {this.state.generations}</h2>
       </div>
     );
   }
+}
+
+function arrayClone(arr) {
+  return JSON.parse(JSON.stringify(arr));
 }
 
 export default App;

@@ -17,6 +17,7 @@ export default (props) => {
         boxId={boxId}
         row={i}
         col={j}
+        selectBox={props.selectBox}
       />);
     }
   }
