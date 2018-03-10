@@ -1,4 +1,5 @@
 import React from "react";
+import Box from "./box";
 
 export default (props) => {
   const { rows, cols, board } = props;
@@ -8,22 +9,20 @@ export default (props) => {
   let boxClass = "";
   for (let i = 0; i < rows; i += 1) {
     for (let j = 0; j < cols; j += 1) {
-      let boxId = `${i}_${j}`;
+      const boxId = `${i}_${j}`;
       boxClass = board[i][j] ? "box on" : "box off";
-      rowsArray.push(
-        <Box
-          key={boxId}
-          boxClass={boxClass}
-          boxId={boxId}
-          row={i}
-          col={j}
-        />
-      );
+      rowsArray.push(<Box
+        key={boxId}
+        boxClass={boxClass}
+        boxId={boxId}
+        row={i}
+        col={j}
+      />);
     }
   }
   return (
     <div className="game-board">
-      Test
+      {rowsArray}
     </div>
   );
 };
