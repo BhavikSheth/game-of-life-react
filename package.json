@@ -76,7 +76,8 @@
     ],
     "plugins": [
       "react-hot-loader/babel",
-      "transform-object-rest-spread"
+      "transform-object-rest-spread",
+      "transform-class-properties"
     ],
     "env": {
       "test": {
