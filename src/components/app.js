@@ -6,7 +6,7 @@ class App extends Component {
     super();
 
     this.speed = 100;
-    this.row = 30;
+    this.rows = 30;
     this.cols = 50;
 
     this.state = {
