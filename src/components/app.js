@@ -6,7 +6,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.speed = 100;
+    this.speed = 10;
     this.rows = 30;
     this.cols = 50;
 
@@ -33,11 +33,11 @@ class App extends Component {
     this.pause();
     switch (size) {
       case "small":
-        this.rows = 10;
-        this.cols = 20;
+        this.rows = 20;
+        this.cols = 30;
         break;
       case "medium":
-        this.rows = 30;
+        this.rows = 35;
         this.cols = 50;
         break;
       default:
@@ -50,13 +50,13 @@ class App extends Component {
   boardSpeed = (speed) => {
     switch (speed) {
       case "slow":
-        this.speed = 500;
-        break;
-      case "normal":
         this.speed = 250;
         break;
-      default:
+      case "normal":
         this.speed = 100;
+        break;
+      default:
+        this.speed = 10;
     }
     this.start();
   }
