@@ -111,6 +111,7 @@ class App extends Component {
   }
 
   clear = () => {
+    this.pause();
     this.setState({
       board: Array(this.rows).fill().map(() => Array(this.cols).fill(false)),
     });
