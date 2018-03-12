@@ -2,8 +2,8 @@ import React from "react";
 import Box from "./box";
 
 export default (props) => {
-  const { rows, cols, board } = props;
-  const width = cols * 14;
+  const { rows, cols, board, selectBox } = props;
+  const width = cols * 16;
   let rowsArray = [];
 
   let boxClass = "";
@@ -17,36 +17,13 @@ export default (props) => {
         boxId={boxId}
         row={i}
         col={j}
-        selectBox={props.selectBox}
+        selectBox={selectBox}
       />);
     }
   }
   return (
-    <div className="game-board">
+    <div className="game-board" style={{ width }}>
       {rowsArray}
     </div>
   );
 };
-
-
-
-
-
-
-
-
-
-// import React, { Component } from "react";
-
-// class GameBoard extends Component {
-  
-//   render() {
-//     return (
-//       <div className="game-board">
-//         Test
-//       </div>    
-//     );
-//   }
-// }
-
-// export default GameBoard;
