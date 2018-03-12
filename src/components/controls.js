@@ -40,9 +40,9 @@ export default class Controls extends Component {
             id="size-menu"
             onSelect={this.handleSelect}
           >
-            <MenuItem eventKey="1">20 x 10</MenuItem>
-            <MenuItem eventKey="2">50 x 30</MenuItem>
-            <MenuItem eventKey="3">70 x 50</MenuItem>
+            <MenuItem eventKey="small">Small</MenuItem>
+            <MenuItem eventKey="medium">Medium</MenuItem>
+            <MenuItem eventKey="large">Large</MenuItem>
           </DropdownButton>
         </ButtonToolbar>
       </div>

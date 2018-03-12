@@ -32,11 +32,11 @@ class App extends Component {
   boardSize = (size) => {
     this.pause();
     switch (size) {
-      case "1":
+      case "small":
         this.rows = 10;
         this.cols = 20;
         break;
-      case "2":
+      case "medium":
         this.rows = 30;
         this.cols = 50;
         break;
@@ -114,6 +114,7 @@ class App extends Component {
     this.pause();
     this.setState({
       board: Array(this.rows).fill().map(() => Array(this.cols).fill(false)),
+      generations: 0,
     });
   }
 
