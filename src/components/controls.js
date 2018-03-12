@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { ButtonToolbar, MenuItem, DropdownButton } from "react-bootstrap";
 
 export default class Controls extends Component {
@@ -65,3 +66,13 @@ export default class Controls extends Component {
     );
   }
 }
+
+Controls.propTypes = {
+  boardSize: PropTypes.func.isRequired,
+  boardSpeed: PropTypes.func.isRequired,
+  buildShape: PropTypes.func.isRequired,
+  start: PropTypes.func.isRequired,
+  pause: PropTypes.func.isRequired,
+  clear: PropTypes.func.isRequired,
+  seed: PropTypes.func.isRequired,
+};

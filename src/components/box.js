@@ -1,12 +1,24 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default (props) => {
-  const { boxClass, boxId, row, col } = props;
+const Box = (props) => {
+  const {
+    boxClass, boxId, row, col, selectBox,
+  } = props;
   return (
     <div
       className={boxClass}
       id={boxId}
-      onClick={() => (props.selectBox(row, col))}
+      onClick={() => (selectBox(row, col))}
     />
   );
+};
+export default Box;
+
+Box.propTypes = {
+  boxClass: PropTypes.string.isRequired,
+  boxId: PropTypes.string.isRequired,
+  row: PropTypes.number.isRequired,
+  col: PropTypes.number.isRequired,
+  selectBox: PropTypes.func.isRequired,
 };

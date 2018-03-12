@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import GameBoard from "./gameBoard";
 import Controls from "./controls";
 
+function arrayClone(arr) {
+  return JSON.parse(JSON.stringify(arr));
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -22,7 +26,7 @@ class App extends Component {
   }
 
   selectBox = (row, col) => {
-    let boardCopy = arrayClone(this.state.board);
+    const boardCopy = arrayClone(this.state.board);
     boardCopy[row][col] = !boardCopy[row][col];
     this.setState({
       board: boardCopy,
@@ -182,7 +186,7 @@ class App extends Component {
   }
 
   seed = () => {
-    let boardCopy = arrayClone(this.state.board);
+    const boardCopy = arrayClone(this.state.board);
     for (let i = 0; i < this.rows; i += 1) {
       for (let j = 0; j < this.cols; j += 1) {
         if (Math.floor(Math.random() * 4) === 0) {
@@ -261,10 +265,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-function arrayClone(arr) {
-  return JSON.parse(JSON.stringify(arr));
 }
 
 export default App;

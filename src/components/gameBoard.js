@@ -1,10 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Box from "./box";
 
-export default (props) => {
-  const { rows, cols, board, selectBox } = props;
+const GameBoard = (props) => {
+  const {
+    rows, cols, board, selectBox,
+  } = props;
   const width = cols * 16;
-  let rowsArray = [];
+  const rowsArray = [];
 
   let boxClass = "";
   for (let i = 0; i < rows; i += 1) {
@@ -26,4 +29,13 @@ export default (props) => {
       {rowsArray}
     </div>
   );
+};
+
+export default GameBoard;
+
+GameBoard.propTypes = {
+  rows: PropTypes.number.isRequired,
+  cols: PropTypes.number.isRequired,
+  board: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.bool)).isRequired,
+  selectBox: PropTypes.func.isRequired,
 };
