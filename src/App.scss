@@ -25,6 +25,7 @@ h1, h2 {
 }
 
 .box {
+  box-sizing: content-box;
   display: inline-block;
   border: 1px solid #000;
   margin-left: -1px;
@@ -43,4 +44,13 @@ h1, h2 {
 
 .box:hover {
   background-color: #00CCFF;
+}
+
+.controls {
+  display: inline-block;
+}
+
+.app {
+  width: 100%;
+  text-align: center;
 }
