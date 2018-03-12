@@ -10,6 +10,10 @@ export default class Controls extends Component {
     this.props.boardSpeed(event);
   }
 
+  handleShapeSelect = (event) => {
+    this.props.buildShape(event);
+  }
+
   render() {
     return (
       <div className="controls">
@@ -43,6 +47,18 @@ export default class Controls extends Component {
             <MenuItem eventKey="small">Small</MenuItem>
             <MenuItem eventKey="medium">Medium</MenuItem>
             <MenuItem eventKey="large">Large</MenuItem>
+          </DropdownButton>
+          <DropdownButton
+            title="Shapes"
+            id="shapes"
+            onSelect={this.handleShapeSelect}
+          >
+            <MenuItem eventKey="glider">Gilder</MenuItem>
+            <MenuItem eventKey="exploder">Exploder</MenuItem>
+            <MenuItem eventKey="10-cell-row">10 Cell Row</MenuItem>
+            <MenuItem eventKey="lightweight-spaceship">Lightweight Spaceship</MenuItem>
+            <MenuItem eventKey="tumbler">Tumbler</MenuItem>
+            <MenuItem eventKey="gospel-glider-gun">Gospel Gilder Gun</MenuItem>
           </DropdownButton>
         </ButtonToolbar>
       </div>

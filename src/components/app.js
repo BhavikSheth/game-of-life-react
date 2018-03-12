@@ -61,6 +61,126 @@ class App extends Component {
     this.start();
   }
 
+  buildShape = (shape) => {
+    const newBoard = Array(this.rows).fill().map(() => Array(this.cols).fill(false));
+    const rowsMidpoint = this.rows / 2;
+    const colsMidpoint = this.cols / 2;
+    switch (shape) {
+      case "glider":
+        newBoard[rowsMidpoint - 1][colsMidpoint] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 1] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint - 1] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint + 1] = true;
+        break;
+      case "exploder":
+        newBoard[rowsMidpoint - 2][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint - 1][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint - 1][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint + 2][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint + 2][colsMidpoint] = true;
+        newBoard[rowsMidpoint + 2][colsMidpoint + 2] = true;
+        break;
+      case "10-cell-row":
+        newBoard[rowsMidpoint][colsMidpoint - 5] = true;
+        newBoard[rowsMidpoint][colsMidpoint - 4] = true;
+        newBoard[rowsMidpoint][colsMidpoint - 3] = true;
+        newBoard[rowsMidpoint][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint][colsMidpoint - 1] = true;
+        newBoard[rowsMidpoint][colsMidpoint] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 1] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 3] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 4] = true;
+        break;
+      case "lightweight-spaceship":
+        newBoard[rowsMidpoint - 2][colsMidpoint - 1] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint + 1] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint - 1][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint - 1][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint + 1] = true;
+        break;
+      case "tumbler":
+        newBoard[rowsMidpoint - 3][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint - 3][colsMidpoint - 1] = true;
+        newBoard[rowsMidpoint - 3][colsMidpoint + 1] = true;
+        newBoard[rowsMidpoint - 3][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint - 1] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint + 1] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint - 1][colsMidpoint - 1] = true;
+        newBoard[rowsMidpoint - 1][colsMidpoint + 1] = true;
+        newBoard[rowsMidpoint][colsMidpoint - 3] = true;
+        newBoard[rowsMidpoint][colsMidpoint - 1] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 1] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 3] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint - 3] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint - 1] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint + 1] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint + 3] = true;
+        newBoard[rowsMidpoint + 2][colsMidpoint - 3] = true;
+        newBoard[rowsMidpoint + 2][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint + 2][colsMidpoint + 2] = true;
+        newBoard[rowsMidpoint + 2][colsMidpoint + 3] = true;
+        break;
+      case "gospel-glider-gun":
+        newBoard[rowsMidpoint - 7][colsMidpoint + 4] = true;
+        newBoard[rowsMidpoint - 7][colsMidpoint + 5] = true;
+        newBoard[rowsMidpoint - 7][colsMidpoint + 15] = true;
+        newBoard[rowsMidpoint - 7][colsMidpoint + 16] = true;
+        newBoard[rowsMidpoint - 6][colsMidpoint + 3] = true;
+        newBoard[rowsMidpoint - 6][colsMidpoint + 5] = true;
+        newBoard[rowsMidpoint - 6][colsMidpoint + 15] = true;
+        newBoard[rowsMidpoint - 6][colsMidpoint + 16] = true;
+        newBoard[rowsMidpoint - 5][colsMidpoint - 19] = true;
+        newBoard[rowsMidpoint - 5][colsMidpoint - 18] = true;
+        newBoard[rowsMidpoint - 5][colsMidpoint - 10] = true;
+        newBoard[rowsMidpoint - 5][colsMidpoint - 9] = true;
+        newBoard[rowsMidpoint - 5][colsMidpoint + 3] = true;
+        newBoard[rowsMidpoint - 5][colsMidpoint + 4] = true;
+        newBoard[rowsMidpoint - 4][colsMidpoint - 19] = true;
+        newBoard[rowsMidpoint - 4][colsMidpoint - 18] = true;
+        newBoard[rowsMidpoint - 4][colsMidpoint - 11] = true;
+        newBoard[rowsMidpoint - 4][colsMidpoint - 9] = true;
+        newBoard[rowsMidpoint - 3][colsMidpoint - 11] = true;
+        newBoard[rowsMidpoint - 3][colsMidpoint - 10] = true;
+        newBoard[rowsMidpoint - 3][colsMidpoint - 3] = true;
+        newBoard[rowsMidpoint - 3][colsMidpoint - 2] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint - 3] = true;
+        newBoard[rowsMidpoint - 2][colsMidpoint - 1] = true;
+        newBoard[rowsMidpoint - 1][colsMidpoint - 3] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 16] = true;
+        newBoard[rowsMidpoint][colsMidpoint + 17] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint + 16] = true;
+        newBoard[rowsMidpoint + 1][colsMidpoint + 18] = true;
+        newBoard[rowsMidpoint + 2][colsMidpoint + 16] = true;
+        newBoard[rowsMidpoint + 5][colsMidpoint + 5] = true;
+        newBoard[rowsMidpoint + 5][colsMidpoint + 6] = true;
+        newBoard[rowsMidpoint + 5][colsMidpoint + 7] = true;
+        newBoard[rowsMidpoint + 6][colsMidpoint + 5] = true;
+        newBoard[rowsMidpoint + 7][colsMidpoint + 6] = true;
+        break;
+      default:
+        this.setState({
+          board: newBoard,
+        });
+    }
+    this.setState({
+      board: newBoard,
+    });
+  }
+
   seed = () => {
     let boardCopy = arrayClone(this.state.board);
     for (let i = 0; i < this.rows; i += 1) {
@@ -129,6 +249,7 @@ class App extends Component {
           seed={this.seed}
           boardSize={this.boardSize}
           boardSpeed={this.boardSpeed}
+          buildShape={this.buildShape}
         />
         <GameBoard
           board={this.state.board}
