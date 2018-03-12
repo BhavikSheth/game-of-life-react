@@ -6,6 +6,10 @@ export default class Controls extends Component {
     this.props.boardSize(event);
   }
 
+  handleSpeedSelect = (event) => {
+    this.props.boardSpeed(event);
+  }
+
   render() {
     return (
       <div className="controls">
@@ -22,15 +26,15 @@ export default class Controls extends Component {
           <button className="btn btn-default" onClick={this.props.seed}>
             Seed
           </button>
-          <button className="btn btn-default" onClick={this.props.slow}>
-            Slow
-          </button>
-          <button className="btn btn-default" onClick={this.props.normal}>
-            Normal
-          </button>
-          <button className="btn btn-default" onClick={this.props.fast}>
-            Fast
-          </button>
+          <DropdownButton
+            title="Speed"
+            id="speed-menu"
+            onSelect={this.handleSpeedSelect}
+          >
+            <MenuItem eventKey="slow">Slow</MenuItem>
+            <MenuItem eventKey="normal">Normal</MenuItem>
+            <MenuItem eventKey="fast">Fast</MenuItem>
+          </DropdownButton>
           <DropdownButton
             title="Board Size"
             id="size-menu"

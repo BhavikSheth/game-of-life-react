@@ -47,6 +47,20 @@ class App extends Component {
     this.clear();
   }
 
+  boardSpeed = (speed) => {
+    switch (speed) {
+      case "slow":
+        this.speed = 500;
+        break;
+      case "normal":
+        this.speed = 250;
+        break;
+      default:
+        this.speed = 100;
+    }
+    this.start();
+  }
+
   seed = () => {
     let boardCopy = arrayClone(this.state.board);
     for (let i = 0; i < this.rows; i += 1) {
@@ -96,21 +110,6 @@ class App extends Component {
     });
   }
 
-  slow = () => {
-    this.speed = 500;
-    this.start();
-  }
-
-  normal = () => {
-    this.speed = 250;
-    this.start();
-  }
-
-  fast = () => {
-    this.speed = 100;
-    this.start();
-  }
-
   clear = () => {
     this.setState({
       board: Array(this.rows).fill().map(() => Array(this.cols).fill(false)),
@@ -124,12 +123,10 @@ class App extends Component {
         <Controls
           start={this.start}
           pause={this.pause}
-          slow={this.slow}
-          normal={this.normal}
-          fast={this.fast}
           clear={this.clear}
           seed={this.seed}
           boardSize={this.boardSize}
+          boardSpeed={this.boardSpeed}
         />
         <GameBoard
           board={this.state.board}
