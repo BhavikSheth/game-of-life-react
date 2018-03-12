@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GameBoard from "./gameBoard";
+import Controls from "./controls";
 
 class App extends Component {
   constructor() {
@@ -15,12 +16,35 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    this.seed();
+    this.start();
+  }
+
   selectBox = (row, col) => {
     let boardCopy = arrayClone(this.state.board);
     boardCopy[row][col] = !boardCopy[row][col];
     this.setState({
       board: boardCopy,
     });
+  }
+
+  boardSize = (size) => {
+    this.pause();
+    switch (size) {
+      case "1":
+        this.rows = 10;
+        this.cols = 20;
+        break;
+      case "2":
+        this.rows = 30;
+        this.cols = 50;
+        break;
+      default:
+        this.rows = 50;
+        this.cols = 70;
+    }
+    this.clear();
   }
 
   seed = () => {
@@ -40,6 +64,10 @@ class App extends Component {
   start = () => {
     clearInterval(this.intervalId);
     this.intervalId = setInterval(this.play, this.speed);
+  }
+
+  pause = () => {
+    clearInterval(this.intervalId);
   }
 
   play = () => {
@@ -68,15 +96,41 @@ class App extends Component {
     });
   }
 
-  componentDidMount() {
-    this.seed();
+  slow = () => {
+    this.speed = 500;
     this.start();
+  }
+
+  normal = () => {
+    this.speed = 250;
+    this.start();
+  }
+
+  fast = () => {
+    this.speed = 100;
+    this.start();
+  }
+
+  clear = () => {
+    this.setState({
+      board: Array(this.rows).fill().map(() => Array(this.cols).fill(false)),
+    });
   }
 
   render() {
     return (
       <div className="app">
         <h1>Game of Life</h1>
+        <Controls
+          start={this.start}
+          pause={this.pause}
+          slow={this.slow}
+          normal={this.normal}
+          fast={this.fast}
+          clear={this.clear}
+          seed={this.seed}
+          boardSize={this.boardSize}
+        />
         <GameBoard
           board={this.state.board}
           rows={this.rows}
