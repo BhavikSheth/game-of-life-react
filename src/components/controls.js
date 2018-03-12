@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ButtonToolbar, MenuItem, DropdownButton } from "react-bootstrap";
 
 export default class Controls extends Component {
-  handleSelect = (event) => {
+  handleSizeSelect = (event) => {
     this.props.boardSize(event);
   }
 
@@ -42,7 +42,7 @@ export default class Controls extends Component {
           <DropdownButton
             title="Board Size"
             id="size-menu"
-            onSelect={this.handleSelect}
+            onSelect={this.handleSizeSelect}
           >
             <MenuItem eventKey="small">Small</MenuItem>
             <MenuItem eventKey="medium">Medium</MenuItem>
