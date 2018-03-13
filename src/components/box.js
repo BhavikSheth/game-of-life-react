@@ -6,10 +6,10 @@ const Box = (props) => {
     boxClass, boxId, row, col, selectBox,
   } = props;
   return (
-    <div
+    <button
+      onClick={() => selectBox(row, col)}
       className={boxClass}
       id={boxId}
-      onClick={() => (selectBox(row, col))}
     />
   );
 };

@@ -33,6 +33,10 @@ h1, h2 {
   height: 15px;
 }
 
+.box:focus {
+  outline: none;
+}
+
 .off {
   background-color: lightgray;
 }
